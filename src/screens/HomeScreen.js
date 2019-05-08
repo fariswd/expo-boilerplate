@@ -14,6 +14,7 @@ import { connect } from 'react-redux';
 import { MonoText } from '../components/StyledText';
 import counter from '../reducers/counter';
 import * as CounterActions from '../actions/CounterActions';
+import * as UserActions from '../actions/UserActions';
 
 @connect(state => ({
   counter: state.counter
@@ -41,22 +42,6 @@ export default class HomeScreen extends React.Component {
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
-
-            <Text style={styles.getStartedText}>Get started by opening</Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
-            </View>
-
-            <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
-            </Text>
-          </View>
-
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
           </View>
 
           <View style={styles.helpContainer}>
@@ -66,6 +51,12 @@ export default class HomeScreen extends React.Component {
             </TouchableOpacity>
             <TouchableOpacity onPress={() => this.props.dispatch(CounterActions.decrement())} style={styles.helpLink}>
               <Text style={styles.helpLinkText}>decrement!!!</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+              this.props.dispatch(UserActions.logout())
+              this.props.navigation.navigate("Index");
+              }} style={styles.helpLink}>
+              <Text style={styles.helpLinkText}>logout!!!</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
