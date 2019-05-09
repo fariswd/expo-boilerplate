@@ -12,6 +12,8 @@ import { WebBrowser } from 'expo';
 import { connect } from 'react-redux';
 
 import { MonoText } from '../components/StyledText';
+import MenuButton from '../components/MenuIcon';
+
 import counter from '../reducers/counter';
 import * as CounterActions from '../actions/CounterActions';
 import * as UserActions from '../actions/UserActions';
@@ -25,9 +27,10 @@ export default class HomeScreen extends React.Component {
   };
   
   render() {
-    console.log(this.props.counter)
+    // console.log(this.props.counter)
     return (
       <View style={styles.container}>
+        <MenuButton navigation={this.props.navigation}/>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
             <Image
