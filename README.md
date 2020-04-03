@@ -3,12 +3,19 @@ Boilerplate
 
 # What's inside
 ```
-expo
-react-navigation3
+latest expo SDK 37
+react-navigation v5
 redux
 redux-thunk
 redux-persist
 ```
+
+# Preloaded Feature
+```
+Login screen
+Homescreen with Bottom Tab Navigation
+```
+
 
 # Use?
 - copy ```src``` and ```App.js``` to your ```expo init``` folder
@@ -16,4 +23,4 @@ redux-persist
 - check ```app.json``` fix asset file to ```./src/assets```
 
 fariswd  
-2019
+2020
